@@ -11,7 +11,7 @@ window.onload = function () {
     };
     var tasks = Storage.get();
     var currentPage = 1;
-    var tasksPerPage = 5;
+    var tasksPerPage = 10;
     function $(id) {
         return document.getElementById(id);
     }

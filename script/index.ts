@@ -19,7 +19,7 @@ window.onload = () => {
 
   let tasks = Storage.get();
   let currentPage = 1;
-  const tasksPerPage = 5;
+  const tasksPerPage = 10;
 
   function $(id: string) {
     return document.getElementById(id);
