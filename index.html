@@ -3,11 +3,79 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Todo App</title>
+    <title>Todo List</title>
     <link rel="stylesheet" href="./style/reset.css" />
     <link rel="stylesheet" href="./style/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
   </head>
   <body>
+    <div class="container">
+      <header class="header">
+        <h1>TODO LIST</h1>
+      </header>
+      <main class="todo-app">
+        <div id="message" class="message" aria-live="polite"></div>
+        <div class="input-section">
+          <button id="open-modal" aria-label="Add new task">
+            <i class="fas fa-plus"></i> Add Task
+          </button>
+          <button id="clear-tasks" aria-label="Clear all tasks">
+            <i class="fas fa-trash"></i> Clear Tasks
+          </button>
+        </div>
+        <div class="filter-section">
+          <input
+            type="text"
+            placeholder="Search titles or tasks..."
+            id="search"
+            aria-label="Search tasks"
+          />
+          <select id="filter" aria-label="Filter tasks">
+            <option value="0">All</option>
+            <option value="1">Completed</option>
+            <option value="-1">Incomplete</option>
+          </select>
+        </div>
+        <ul id="task-list" class="task-list" aria-label="List of tasks"></ul>
+        <nav
+          class="pagination"
+          id="pagination-controls"
+          aria-label="Pagination"
+        ></nav>
+      </main>
+    </div>
+
+    <!-- Add Task Modal -->
+    <div class="modal" id="task-modal" aria-hidden="true">
+      <div class="modal-content" role="dialog" aria-labelledby="modal-title">
+        <button class="close-btn" id="close-modal" aria-label="Close modal">
+          ×
+        </button>
+        <h2 id="modal-title">Add TODO</h2>
+        <form id="add-task-form">
+          <label for="task-title">Title</label>
+          <input
+            type="text"
+            id="task-title"
+            placeholder="Enter title"
+            required
+          />
+          <label for="task-status">Status</label>
+          <select id="task-status">
+            <option value="Incomplete">Incomplete</option>
+            <option value="Complete">Complete</option>
+          </select>
+          <div class="modal-actions">
+            <button type="submit" id="add-task-modal">
+              <i class="fas fa-plus"></i> Add Task
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
     <script src="./script/index.js" defer></script>
   </body>
 </html>
